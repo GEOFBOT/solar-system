@@ -20,7 +20,7 @@ Sun = sphere(pos = vector(0, 0, 0), material = materials.texture(materials.loadT
 Sun.m = 1.989e30
 
 Mercury = sphere(pos = vector(math.cos(math.radians(7)) * 57.9e9, math.sin(math.radians(7)) * 57.9e9, 0), material = materials.texture(materials.loadTGA("tex/mercury.tga"), mapping = "spherical"), radius = 2.44e6 * smallPlanetMultiplier)
-Venus = sphere(pos = vector(math.cos(math.radians(3.39)) * 108e9, math.sin(math.radians(3.39)) * 108e9, 0), material = materials.texture(materials.loadTGA("tex/venus2.tga"), mapping = "spherical"), radius = 6.05e6 * smallPlanetMultiplier)
+Venus = sphere(pos = vector(math.cos(math.radians(3.39)) * 108e9, math.sin(math.radians(3.39)) * 108e9, 0), material = materials.texture(materials.loadTGA("tex/venus.tga"), mapping = "spherical"), radius = 6.05e6 * smallPlanetMultiplier)
 Earth = sphere(pos = vector(149.6e9, 0, 0), material = materials.BlueMarble, radius = 6.4e6 * smallPlanetMultiplier)
 Mars = sphere(pos = vector(math.cos(math.radians(1.85)) * 228e9, math.sin(math.radians(1.85)) * 228e9, 0), material = materials.texture(materials.loadTGA("tex/mars.tga"), mapping = "spherical"), radius = 3.395e6 * smallPlanetMultiplier)
 Jupiter = sphere(pos = vector(math.cos(math.radians(1.3)) * 778e9, math.sin(math.radians(1.3)) * 778e9, 0), material = materials.texture(materials.loadTGA("tex/jupiter.tga"), mapping = "spherical"), radius = 71.5e6 * largePlanetMultiplier)
