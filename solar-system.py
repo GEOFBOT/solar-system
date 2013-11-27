@@ -31,7 +31,7 @@ Neptune = sphere(pos = vector(math.cos(math.radians(1.3)) * 4500e9, math.sin(mat
 planets = [Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune]
 
 # TODO: Easter egg here
-Enterprise = sphere();
+Enterprise = sphere(
 
 # Amount of days to simulate
 days = 4332.59
