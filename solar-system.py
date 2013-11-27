@@ -4,7 +4,6 @@ from visual import *
 from physutil import *
 import math
 import csv
-import yomama
 
 # VISUALIZATION & GRAPH INITIALIZATION
 # ===========================================
@@ -30,9 +29,6 @@ Uranus = sphere(pos = vector(math.cos(math.radians(0.77)) * 2870e9, math.sin(mat
 Neptune = sphere(pos = vector(math.cos(math.radians(1.3)) * 4500e9, math.sin(math.radians(1.3)) * 4500e9, 0), material = materials.texture(materials.loadTGA("tex/neptune.tga"), mapping = "spherical"), radius = 24.75e6 * largePlanetMultiplier)
 
 planets = [Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune]
-
-# TODO: Easter egg here
-Enterprise = sphere(
 
 # Amount of days to simulate
 days = 4332.59
