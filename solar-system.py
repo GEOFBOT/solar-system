@@ -4,6 +4,7 @@ from visual import *
 from physutil import *
 import math
 import csv
+import yomama
 
 # VISUALIZATION & GRAPH INITIALIZATION
 # ===========================================
