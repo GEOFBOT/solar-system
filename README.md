@@ -7,6 +7,8 @@ A solar system in VPython.
 * Size is not to scale.
 * Distances are to scale.
 
+Requires https://code.google.com/p/python-physutil/
+
 The without graphics version is for faster calculation of positions.
 
 Textures are by NASA and Björn Jónsson (http://www.mmedia.is/~bjj/).
