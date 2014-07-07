@@ -28,7 +28,21 @@ Saturn = sphere(pos = vector(math.cos(math.radians(2.49)) * 1430e9, math.sin(mat
 Uranus = sphere(pos = vector(math.cos(math.radians(0.77)) * 2870e9, math.sin(math.radians(0.77)) * 2870e9, 0), material = materials.texture(materials.loadTGA("tex/uranus.tga"), mapping = "spherical"), radius = 25.9e6 * largePlanetMultiplier)
 Neptune = sphere(pos = vector(math.cos(math.radians(1.3)) * 4500e9, math.sin(math.radians(1.3)) * 4500e9, 0), material = materials.texture(materials.loadTGA("tex/neptune.tga"), mapping = "spherical"), radius = 24.75e6 * largePlanetMultiplier)
 
-planets = [Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune]
+Enterprise = frame()
+box(frame=Enterprise, pos=vector(0,0,5e8), length=10e8, height=2e8, width=2e8)
+box(frame=Enterprise, pos=vector(0,0,-5e8), length=10e8, height=2e8, width=2e8)
+box(frame=Enterprise, pos=vector(2e8,-2e8,2.5e8), length=1e8, height=5e8, width=2e8, axis = vector(-.5e8,-4e8,5e8))
+box(frame=Enterprise, pos=vector(2e8,-2e8,-2.5e8), length=1e8, height=5e8, width=2e8, axis = vector(-.5e8,-4e8,-5e8))
+cylinder(frame=Enterprise, pos=vector(0,-4e8,0), radius = 2e8, length = 10e8)
+box(frame=Enterprise, pos=vector(8e8,-2e8,0), length=2e8, height=8e8, width=1e8, axis = vector(3e8,-4e8,0))
+cylinder(frame=Enterprise, pos=vector(18e8,-.4e8,0), length=2e8, radius=9e8, axis=(0,1,0))
+Enterprise.pos = vector(135e9, 5e9, 0)
+Enterprise.m = 3.25e9
+Enterprise.vel = vector(0, 0, -29.8e3)
+
+planets = [Mercury, Venus, Earth, Enterprise, Mars, Jupiter, Saturn, Uranus, Neptune]
+
+
 
 # Amount of days to simulate
 days = 4332.59
@@ -66,7 +80,8 @@ trailJupiter = curve(color = color.white, radius = trailRadius)
 trailSaturn = curve(color = color.white, radius = trailRadius)
 trailUranus = curve(color = color.white, radius = trailRadius)
 trailNeptune = curve(color = color.white, radius = trailRadius)
-trails = [trailMercury, trailVenus, trailEarth, trailMars, trailJupiter, trailSaturn, trailUranus, trailNeptune]
+trailEnterprise = curve(color = color.red, radius = trailRadius)
+trails = [trailMercury, trailVenus, trailEarth, trailEnterprise, trailMars, trailJupiter, trailSaturn, trailUranus, trailNeptune]
 
 deltat = 60*60
 t = 0
@@ -109,6 +124,8 @@ while t < deltat * 24 * days:
     for i in planets:
         i.pos = i.pos + i.vel * deltat
         trails[planets.index(i)].append(i.pos)
+    if len(trailEnterprise.pos) > 1:
+        Enterprise.axis = trailEnterprise.pos[len(trailEnterprise.pos) - 1] - trailEnterprise.pos[len(trailEnterprise.pos) - 2]
     t += deltat
     rate(500)
     
