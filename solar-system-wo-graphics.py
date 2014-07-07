@@ -71,6 +71,7 @@ def Fgrav(planet):
 while t < deltat * 24 * days:
     for i in planets:
         i.vel = i.vel + (Fgrav(i) / i.m) * deltat
+    for i in planets:
         i.pos = i.pos + i.vel * deltat
     t += deltat
     #print(t)
